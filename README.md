@@ -3,7 +3,7 @@ I have a problem with this simple code based on distributed tensorflow.
 Given the directory located to the path "/home/simoneneurone/Documents/images/train/", i want to create a Dataset tensorflow
 object (tf.Data.Dataset), apply preprocessing operations (subtract a mean and a resize on all the images in the folder),
 then create an iterator and consume it. When i run the code, i get the following error:
-
+```
 0
 Loading filenames...
 Build dataset ...
@@ -64,12 +64,14 @@ tensorflow.python.framework.errors_impl.NotFoundError: /home/simoneneurone/Docum
 	 [[{{node ReadFile}}]]
 	 [[node IteratorGetNext (defined at test.py:89) ]]
 	 [[node IteratorGetNext (defined at test.py:89) ]]
-
+```
 In order to run the ps:
+```
 python distribution.py --job_name ps --task_index 0
-
-In order to run the worker:
+```
+In order to run the single worker:
+```
 python distribution.py --job_name worker --task_index 0
-
+```
 I guess that the problem is related to MonitoredTrainingSession, that is usefull in order to restore training from checkpoints, when we want to distribute the training on a cluster. In fact, if we run the same code replacing MonitoredTrainingSession with a simple session, the code works fine. 
 Can you help me, please? i will really appreciate and thanks in advance.
