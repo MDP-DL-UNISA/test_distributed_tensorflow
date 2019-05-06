@@ -1,5 +1,8 @@
 # test_dataset
-I have a problem with this simple code based on distributed tensorflow. Given the directory located to the path "/home/simoneneurone/Documents/images/train/", i want to create a Dataset tensorflow object (tf.Data.Dataset), apply preprocessing operations (subtract a mean and a resize on all the images in the folder), then create an iterator and consume it. When i run the code, i get the following error:
+I have a problem with this simple code based on distributed tensorflow.
+Given the directory located to the path "/home/simoneneurone/Documents/images/train/", i want to create a Dataset tensorflow
+object (tf.Data.Dataset), apply preprocessing operations (subtract a mean and a resize on all the images in the folder),
+then create an iterator and consume it. When i run the code, i get the following error:
 
 0
 Loading filenames...
